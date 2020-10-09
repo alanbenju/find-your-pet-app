@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 function PetsPage({ navigation }) {
   return (
     <>
+    <Title>ADOPCIÓN</Title>
     <ScrollView style={styles.container}>
         <Card>
           <Card.Title title="Card Title" subtitle="Card Subtitle" left={(props) => <Avatar.Icon {...props} icon="folder" />} />

@@ -17,7 +17,26 @@ import Header from '../components/Header'
         
         */
 
+/**
+ * 
+<Button style={styles.fab} mode="contained" onPress={() => navigation.navigate('MapPage', {
+    title: foundPetTitle
+  })}>
+    {foundPetButtonText}
+  </Button>
+  <Button style={styles.fab} mode="outlined" onPress={() => navigation.navigate('MapPage', {
+    title: lostPetTitle
+  })}>
+    {lostPetButtonText}
+  </Button>
+ */
+
 function UserSelectionPage({ navigation }) {
+  const foundPetTitle = "Donde lo encontraste?"
+  const lostPetTitle = "Donde se perdio?"
+  const foundPetButtonText = "Encontre una mascota"
+  const lostPetButtonText = "Busco a mi mascota"
+
   return (
     <>
       <View style={styles.container}>
@@ -25,12 +44,16 @@ function UserSelectionPage({ navigation }) {
           <Avatar.Image size={200} source={require('../../assets/logo-200x200.png')} />
         </View>
         <View style={styles.viewContainer}>
-          <Button style={styles.fab} mode="contained" onPress={() => navigation.navigate('Map')}>
-            Encontre una mascota
+          <Button style={styles.fab} mode="contained" onPress={() => navigation.navigate('LoginPage')}>
+            {"Iniciar sesion"}
           </Button>
-          <Button style={styles.fab} mode="outlined" onPress={() => navigation.navigate('Map')}>
-            Busco a mi mascota
+          <Button style={styles.fab} mode="outlined" onPress={() => navigation.navigate('SignupPage')}>
+            {"Registrarse"}
           </Button>
+          <Button style={styles.fab, styles.textButton} mode="text" onPress={() => navigation.navigate('SelectOptionPage')}>
+            {"En otro momento"}
+          </Button>
+
         </View>
 
       </View>
@@ -57,7 +80,11 @@ const styles = StyleSheet.create({
     margin: 20,
     right: 0,
     bottom: 10,
-    width: 300
+    width: 300,
+    fontFamily: 'sans-serif'
+  },
+  textButton: {
+    fontSize: 11
   }
 })
 
